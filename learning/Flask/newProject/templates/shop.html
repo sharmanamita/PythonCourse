@@ -1,0 +1,10 @@
+<form action="shop" method="get">
+    <p><input type="text" name="item" /></p>
+    <p> <input type="submit" value="Add"/></p>
+</form>
+
+<ol>
+    {% for item in mylist %}
+    <li>{{item}}</li>
+    {% endfor %}
+</ol>
