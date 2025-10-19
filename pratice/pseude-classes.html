@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .content:first-child{
+            color: red;
+        } */
+
+        .content p:first-child{
+            color: red;
+        }
+        .content p:last-child{
+            color: blue;
+        }
+        .content li:first-of-type{
+            color: violet;
+        }
+        .content li:last-of-type{
+            color: violet;
+        }
+        .content li:nth-of-type(4){
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!-- <ul> -->
+            <p>I am First</p>
+            <li>Home</li>
+            <li>Home</li>
+            <li>Home</li>
+            <li>Home</li>
+            <li>Home</li>
+            <li>Home</li>
+            <p>I am Last</p>
+        <!-- </ul> -->
+    </div>
+</body>
+</html>

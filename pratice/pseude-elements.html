@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/fontawesome.min.css"
+      integrity="sha512-M5Kq4YVQrjg5c2wsZSn27Dkfm/2ALfxmun0vUE3mPiJyK53hQBHYCVAtvMYEC7ZXmYLg8DVG4tF8gD27WmDbsg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style>
+    section {
+      position: relative;
+      width: 320px;
+      margin: 50px;
+    }
+    section h1::before {
+      content: "Thapa Technical \f121";
+      font-family: 'font awesome 7 free';
+      color: maroon;
+      font-size: 15px;
+      position: absolute;
+      top: -20px;
+    }
+
+    /* section h1::before {
+      content: "\f121";
+      font-family: 'fontawesome 7 free';
+      color: maroon;
+      font-size: 15px;
+      position: absolute;
+      top: -20px;
+    } */
+
+    section h1::after {
+      content: "";
+      border: 2px solid maroon;
+      width: 40%;
+      position: absolute;
+      right: 0;
+      display: block;
+    }
+
+    section p::first-letter{
+        font-size: 48px;
+        font-weight: bold;
+        color: maroon;
+    }
+
+    section p::first-line{
+        text-decoration: underline;
+    }
+
+    section p::selection{
+        color: white;
+        background-color: maroon;
+    }
+  </style>
+  <body>
+    <section>
+      <h1>Best CSS Course Ever</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+        molestias, quod, quia, voluptatum quos quae voluptates quibusdam
+        quibusdamque quas quidem. Quisquam, quod, quia, voluptatum quos quae
+        voluptates quibusdam quibusdamque quas quidem.
+      </p>
+    </section>
+  </body>
+</html>

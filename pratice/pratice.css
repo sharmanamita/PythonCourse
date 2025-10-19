@@ -1,0 +1,27 @@
+.child {
+  height: 100px;
+  width: 100px;
+  background-color: rgb(67, 84, 169);
+  position: absolute;
+}
+.child-1 {
+  top: 0;
+  left: 0;
+}
+.child-2 {
+  top: 0;
+  right: 0;
+}
+.child-3 {
+  bottom: 0;
+  left: 0;
+}
+.child-4 {
+  bottom: 0;
+  right: 0;
+}
+.child-5 {
+  top: 200px;
+  right: 200px;
+  /* transform: translate(-50%, -50%); */
+}
