@@ -1,0 +1,20 @@
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+
+# Virtualenv subdirectories (if nested)
+**/venv*/
+**/env*/
+**/.venv/
+
+# Related files
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+
+# site Packages
+GenAI_IBM_COURSE/genai/Lib/site-packages/
+GenAI_IBM_COURSE/genai/Lib/site-packages/**
