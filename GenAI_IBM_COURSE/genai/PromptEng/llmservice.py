@@ -1,6 +1,9 @@
+from flask.cli import load_dotenv
 from openai import OpenAI
+import os
 
-Test_Key = "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"
+load_dotenv()
+Test_Key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=Test_Key)
 
 def llm_model(prompt, model="gpt-4.1"):
