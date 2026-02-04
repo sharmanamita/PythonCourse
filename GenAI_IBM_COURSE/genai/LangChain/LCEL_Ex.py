@@ -25,6 +25,8 @@ from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableLambda
 from langchain.chat_models import init_chat_model
+from langchain_core.language_models import ModelProfileRegistry
+import os
 
 
 content = "Tell me a {adjective} joke about {subject}"
@@ -36,7 +38,8 @@ def format_prompt(inputs: dict) -> str:
 # Initialize an OpenAI-backed chat model via LangChain.
 # Replace "openai:gpt-4.1" with a model you have access to.
 # Run this cmd before running the code -> $env:OPENAI_API_KEY="your_openai_api_key"
-llm = init_chat_model("openai:gpt-4.1", temperature=0.5)
+# llm = init_chat_model(model="gpt-5", model_provider="openai", temperature=0.5)
+llm = init_chat_model("openai:gpt-5", temperature=0.5)
 
 joke_chain = (
     RunnableLambda(format_prompt)
@@ -44,5 +47,5 @@ joke_chain = (
     | StrOutputParser()
 )
 
-result = joke_chain.invoke({"adjective": "funny", "subject": "people"})
+result = joke_chain.invoke({"adjective": "funny", "subject": "chickens"})
 print(result)

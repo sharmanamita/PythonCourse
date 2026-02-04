@@ -17,3 +17,9 @@ pip install jwt
 # To track the librabries versions we can create requirements.txt using
 pip freeze > requirements.txt 
 # this will create new file and will all entries in files (similar to package-lock.json)
+
+# Unistall all packages listed in requirements.txt
+pip uninstall -r requirements.txt -y
+
+# Install everything from requirements.txt
+pip install -r requirements.txt
