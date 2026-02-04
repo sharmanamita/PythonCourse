@@ -10,6 +10,7 @@ env.bak/
 **/venv*/
 **/env*/
 **/.venv/
+GenAI_IBM_COURSE/module2-RAG/rag-venv
 
 # Related files
 pip-log.txt
@@ -17,5 +18,6 @@ pip-delete-this-directory.txt
 .tox/
 
 # site Packages
-GenAI_IBM_COURSE/genai/Lib/site-packages/
-GenAI_IBM_COURSE/genai/Lib/site-packages/**
+GenAI_IBM_COURSE/module1-GenAI/genai/Lib/site-packages/
+GenAI_IBM_COURSE/module1-GenAI/genai/Lib/site-packages/**
+GenAI_IBM_COURSE/module2-RAG/rag-venv/Lib/site-packages/**

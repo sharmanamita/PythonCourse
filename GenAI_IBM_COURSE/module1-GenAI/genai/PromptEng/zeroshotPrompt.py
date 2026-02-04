@@ -1,11 +1,12 @@
 from llmservice import llm_model
 
-prompt = """Classify the following statement as true or false: 
-            'The Eiffel Tower is located in Berlin.'
+# prompt = """Classify the following statement as true or false: 
+#             'The Eiffel Tower is located in Berlin.'
 
-            Answer:
-"""
-llm_model(prompt)
+#             Answer:
+# """
+prompt = "Give me a slogan for a brand that works on rental business and raime it rentnpay."
+print(llm_model(prompt))
 
 #Ecercise additional prompts
 # 1. Prompt for Movie Review Classification
@@ -21,9 +22,9 @@ climate_change_prompt = "Write a paragraph about climate change and summarize it
 translation_prompt = "Translate the following English phrase to Spanish: 'Good morning, how are you?'"
 
 response = {}
-response['movie_review'] = llm_model(movie_review_prompt)
-response['climate_change'] = llm_model(climate_change_prompt)
-response['translation'] = llm_model(translation_prompt)
+# response['movie_review'] = llm_model(movie_review_prompt)
+# response['climate_change'] = llm_model(climate_change_prompt)
+# response['translation'] = llm_model(translation_prompt)
 
 for item in response:
     print(response[item], "\n")
