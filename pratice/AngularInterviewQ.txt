@@ -1,0 +1,174 @@
+Angular Coding Questions (No Solutions)
+
+#1. Components & Templates
+Create custom pipe to filter array by search term
+
+Implement @ViewChild to access child component method
+
+*ngFor with trackBy function optimization
+
+@Input/@Output parent-child communication
+
+Dynamic component loading with ComponentFactoryResolver
+
+#2. Directives & Pipes
+Custom attribute directive (highlight on hover)
+
+Custom structural directive (*appUnless)
+
+Pure vs impure pipe performance difference
+
+Async pipe with Observable in template
+
+Parameterized pipe usage
+
+#3. Services & DI
+HTTP interceptor for auth headers
+
+Service with providedIn: 'root' vs module providers
+
+Factory provider for dynamic service instances
+
+Resolver for route data pre-fetching
+
+#4. Routing
+Route guards (canActivate, canDeactivate)
+
+Lazy loading module setup
+
+Dynamic route params with ActivatedRoute
+
+Child routes with nested <router-outlet>
+
+#5. Forms
+Reactive form with custom validator
+
+FormArray dynamic controls addition/removal
+
+Template-driven form with ngModelGroup
+
+Cross-field validation in reactive forms
+
+#6. RxJS & Async
+switchMap vs mergeMap vs concatMap usage
+
+Debounce search input with debounceTime()
+
+combineLatest for multiple API calls
+
+Error handling with catchError
+
+#6. State Management
+Simple BehaviorSubject service for app state
+
+shareReplay for cached HTTP calls
+
+#7. Advanced
+Content projection with ng-content + ng-container
+
+Standalone components (Angular 14+) usage
+
+Signals integration (Angular 16+)
+
+Zone-less change detection setup
+
+#####################################END
+
+
+Angular Theory Interview Questions (No Solutions)
+
+
+#1. Core Concepts
+What is Angular and how does it differ from AngularJS?
+
+What are the 9 building blocks of Angular?
+
+Explain template vs component vs service
+
+Difference between Declaration vs Provider in NgModule
+
+What is AOT compilation vs JIT?
+
+Angular CLI purpose and key commands (ng generate, ng serve)
+
+#2. Components & Lifecycle
+constructor() vs ngOnInit() - when to use each?
+
+List all 8 lifecycle hooks in execution order
+
+What triggers ngOnChanges()?
+
+When does ngOnDestroy() execute?
+
+@Input() vs @Output() decorator usage
+
+#3. Data Binding
+4 types of data binding in Angular (interpolation, property, event, two-way)
+
+Property binding [] vs Interpolation {{}} performance
+
+Two-way binding syntax and use cases
+
+Banana in a box syntax [(ngModel)]
+
+#4. Directives
+Structural (*ngIf, *ngFor) vs Attribute directives
+
+Component directives vs regular directives
+
+How to create custom attribute directive?
+
+@HostListener() vs @HostBinding()
+
+#5. Pipes
+Pure vs impure pipes - performance impact
+
+Async pipe advantages over | json
+
+Stateful vs stateless pipes
+
+#6. Dependency Injection
+Hierarchical dependency injection (component → service → root)
+
+providedIn: 'root' vs providers: []
+
+@Optional() vs @SkipSelf() injectors
+
+#7. Routing
+Lazy loading module configuration
+
+canActivate vs canDeactivate guards
+
+ActivatedRoute vs Router services
+
+Preloading strategies
+
+#8. Forms
+Template-driven vs Reactive forms - when to use each?
+
+Built-in validators vs custom validators
+
+FormControl vs FormGroup lifecycle
+
+#9. Change Detection
+Default vs OnPush change detection strategy
+
+Zone.js role in Angular change detection
+
+ChangeDetectorRef manual triggering
+
+#10. Performance
+trackBy function purpose in *ngFor
+
+OnPush strategy pitfalls
+
+Lazy loading impact on bundle size
+
+#11. Advanced
+Standalone components (Angular 14+) vs NgModules
+
+Signals (Angular 16+) vs Observables
+
+Control flow @if, @for, @switch (Angular 17+)
+
+Zone-less change detection (Angular 18+)

@@ -1,0 +1,140 @@
+******************1-10: Basics******************
+Reverse string without reverse()
+
+Find largest number in array
+
+Check palindrome
+
+Count vowels in string
+
+Fibonacci sequence (first 10 numbers)
+
+Remove duplicates (preserve order)
+
+Factorial of number
+
+Prime number check
+
+Object from two arrays (keys, values)
+
+Flatten nested array
+
+******************11-15: Medium******************
+
+Two Sum (indices summing to target)
+
+Anagram check (two strings)
+
+Rotate array by k positions
+
+Deep clone object/array
+
+Implement debounce function
+
+******************16-20: Advanced******************
+
+Promise.all polyfill
+
+Function currying
+
+Flatten nested object to dot notation
+
+Chunk array into smaller arrays
+
+LRU Cache implementation (get/put O(1))
+
+******************21-25: Angular/Relevant******************
+
+Throttle function
+
+Event delegation (single handler)
+
+Array difference (A - B)
+
+Flatten array by depth level
+
+Memoize function (cache results)
+
+
+
+#################################################END
+
+JavaScript Theory Questions (No Solutions)
+
+#1. Core JavaScript Concepts
+What is the difference between == vs ===?
+
+Explain var vs let vs const
+
+What is hoisting? How does it work with functions vs variables?
+
+What are closures? Give a real-world use case
+
+Explain this keyword in different contexts (arrow vs regular functions)
+
+What is the event loop? Microtasks vs Macrotasks
+
+Difference between null vs undefined
+
+What is typeof? What values does it return?
+
+Explain prototypal inheritance vs classical inheritance
+
+What is a constructor function?
+
+#2. ES6+ Feature
+Arrow functions vs regular functions (this binding)
+
+Destructuring assignment (array vs object)
+
+Spread operator vs Rest parameters
+
+let temporal dead zone (TDZ)
+
+Template literals advantages
+
+Default parameters vs function overloading
+
+Object.entries(), Object.keys(), Object.values()
+
+Promise vs async/await vs callbacks
+
+#3. Async JavaScript
+What is Promise chaining? `.then().catch()
+
+Explain Promise.all() vs Promise.race()
+
+Difference between async/await and Promises
+
+What happens if you await a non-promise?
+
+How does fetch() handle errors?
+
+#4. DOM & Browser
+querySelector() vs getElementById()
+
+What is event delegation? Why use it?
+
+Difference between preventDefault() vs stopPropagation()
+
+How does Angular change detection relate to Zone.js?
+
+#5. Angular Frontend Focus
+What is $event in Angular event binding?
+
+ngOnInit() vs constructor() - when to use each?
+
+Property binding [] vs Interpolation {{}}
+
+*ngFor vs *ngIf performance impact
+
+Angular lifecycle hooks order
+
+#6. Performance & Best Practices
+Debounce vs Throttle - when to use each?
+
+What causes memory leaks in JavaScript?
+
+JSON.stringify() vs deep clone
+
+Strict mode ("use strict") benefits
