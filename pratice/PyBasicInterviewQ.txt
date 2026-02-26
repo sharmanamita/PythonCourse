@@ -1,21 +1,73 @@
 Theory Questions
-What are Python's main data types? List 5 built-ins.
+1. What are Python's main data types? List 5 built-ins.
+-> str, int, float, bool, list, tuple, set, dict
 
-List vs Tuple: Key differences and use cases.
+2. List vs Tuple: Key differences and use cases.
+-> list is mutable, tuple is immutable
+   list can be accesed using indexes, tuple cannot be accessed using indexes
+   list has methods as append(), pop(), remove(). Tuple has only index(), count()
+   list can be used where we need to perform operation such as add, remove users
+   Tuple can be used where we have to store co-ordinates, configs
 
-What is the difference between == and is?
+3. List vs Array: Key differences and use cases.
+-> Major key difference is array can have only one type of data types 
+   list can have mixed types of data types
 
-Explain mutable vs immutable objects with examples.
+   array has fixed amount of size
+   list has flexible size as it has flexible pointers.
 
-What is __init__? Why use self?
 
-What are lists, dictionaries, sets, tuples?
+4.What is the difference between == and is?
+-> == compares values, is compares the memory address allocated on heap.
 
-How does indentation work in Python?
+5.Explain mutable vs immutable objects with examples.
+-> mutable objects value are changable but immutable object values are not.
+   Ex. Mutable - array = [1,2,3]; arr[0] = 8; -->changable no error
+   Ex. Immutable - str = "namita"; str[0] = "N" --> wont change it will create new object on heap
 
-What are global vs local variables?
+6.What is __init__? Why use self?
+-> __init__ is python's contructor method, which get automatically called when new object of class in created.
+   self is a current instance object of class. similar to this
+   Ex: class Employee:
+            __init__(self, name, role):
+                self.name = name
+                self.role = role
+        emp = Employee("namita", "developer")
+        print(emp.name)
+   
 
-Explain if-elif-else vs match-case (Python 3.12+).
+7. What are lists, dictionaries, sets, tuples?
+-> list, tuple, dict, sets are fundamental data strutures of python. They are used for storing and managing data.
+where each of them differ from mutability, ordering and use cases 
+
+#order, mutablity, sysntax, purpose, indexing, use case
+Lists are ordered, mutable collections that store multiple items in square brackets [].
+You can add, remove, or change elements after creation, and 
+they allow duplicates with index-based access starting at 0.
+
+list - can be used where list of items can be modified such as shopping car or users list
+tuple - used for storing co-ordinates or config settings, which dont needs to be modified.
+sets - used for keeping unique elements such as unique userId
+dict - used for maintaining request and response structure. in key:value pairs.->keys are unique.
+
+8. How does indentation work in Python?
+-> Indentation in python defines code blocks and structures, unlike other lang uses {} for execuation and readbility.
+Python uses cosistant spaces to group the statements like if, loop, functions and classes.
+It uses : for indicatingg start of block statement. if there are any mixed tabs and spaces then it gives indentation error.
+
+9. What are global vs local variables?
+-> Global and local varaibles are defined by their scope-like where they can be accessed or modified.
+Local variables scope is defined in function or block scope.
+global varaibles scope cane be accessed through module if not shadowed (meaning same x in modules and same x in function is used)
+
+10. Explain if-elif-else vs match-case (Python 3.12+).
+-> both can handlee conditional logic but 
+match-case - more cleaner but cannot handle complex conditions, it can be used where we have to check status code
+if-elif-else - complex structure, handle complex conditions, it can be used where age > 18 && age < 80.
+
+11. Match-case vs switch-case?
+-> matchcase - does not have break it directly breaks when condition is met. for default it uses case _
+   swicthcase - needs break statement, for default it uses default parameter
 
 What is a module? How to import?
 

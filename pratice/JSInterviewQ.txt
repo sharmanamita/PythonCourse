@@ -62,15 +62,62 @@ Memoize function (cache results)
 JavaScript Theory Questions (No Solutions)
 
 #1. Core JavaScript Concepts
-What is the difference between == vs ===?
+1. What is the difference between == vs ===?
+-> == compare the values of the objects, === compares memory address allocated to heap
 
-Explain var vs let vs const
+2. Explain var vs let vs const
+-> var : global scope, hoisting gives value undefined, Re-assign, Re-declare
+   let : block scope, hoisting gives TDZ error, Re-assign, but connot Re-declare
+   const:block scope, hoisting gives TDZ error, cannot Re-assign or Re-declare
 
-What is hoisting? How does it work with functions vs variables?
+3. What is hoisting? How does it work with functions vs variables?
+-> Hoisting is the JavaScript behaviour where declaration are moved to the top of their scope during compilation, before execuation.
+    Functions -> greet(); function greet(){console.log("Hello")} -> works perfectly prints "hello"
+    Exp Funcs -> greet(); var greet = function(){console.log("Hello")} -> not defined error
+    variables -> console.log(x); var x =10;(undefined) ->  
+                 let x = 10; const x = 10; TDZ; Reference error
+    Purpose: flexible ordering - It gives us ability to access functions variables anywhere before its declarations
+    unlike langs c, java there need to declare then we have to use it.
 
-What are closures? Give a real-world use case
+4. What are closures? Give a real-world use case
+-> closures are functions where inner functions has access to outer scope variables even after outer func returns.
+   Use case - private counters, event handlers, data encapsulation. Each closure gets its own scope snapshot.
+   Ex. function outer(value){
+  let count = value;
+  
+  return function inner(){
+    count++;
+    console.log(count);
+  }
+}
 
-Explain this keyword in different contexts (arrow vs regular functions)
+count = outer(1);
+count();
+count();
+count2 = outer(5);
+count2();
+count2();
+
+
+
+5. Explain this keyword in different contexts (arrow vs regular functions)
+-> .this rules -
+    1. default = window/global
+    2. object = object is calling function then this will have object Reference
+    3. call/apply/bind = this will object based on arguments
+    4. arrow function = Arrow functions ignore call site, use this from surrounding code:
+    function greet(msg, puntuation){
+        console.log(`${msg}${puntuation} ${this.name}`)
+    }
+    var person = {name: "Namita"}
+    greet.call(person, "Good Morning", ":)" );
+    greet.apply(person, ["Good evening", ":)"])
+
+    var func = greet.bind(person, 'GN', "!");
+    func();
+
+Lexical this = Static binding (determined by where function is written)
+Regular this (Dynamic)
 
 What is the event loop? Microtasks vs Macrotasks
 

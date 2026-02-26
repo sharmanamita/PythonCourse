@@ -79,15 +79,33 @@ Angular Theory Interview Questions (No Solutions)
 
 
 #1. Core Concepts
-What is Angular and how does it differ from AngularJS?
+1. What is Angular and how does it differ from AngularJS?
+-> Angular is typescript based, AngularJs is Javascript based
+    Angular has component architecture, AngularJs has MVC basarchitectureed
+    Angular is faster, has AOT also ivy rendering engine, AngularJs JIT compilation
+    Angular is Signals, zoneless feature, control flow.
 
-What are the 9 building blocks of Angular?
+2. What are the 9 building blocks of Angular?
+-> Modules, Components, Templates, Directives, Services, Dependency Injection, Router, HTTP Client, and State Management.
 
-Explain template vs component vs service
+3. Explain template vs component vs service
+Template = HTML view (what users see).
+Component = TypeScript class + logic (what makes template dynamic).
+Service = Business logic/data layer (shared across components).
 
-Difference between Declaration vs Provider in NgModule
+4. Difference between Declaration vs Provider in NgModule
+-> Declarations register view classes (components, directives, pipes) local to the module.
+   Providers register injectable services for Dependency Injection (DI).
 
-What is AOT compilation vs JIT?
+5. What is dependency injection (DI)?
+-> Dependency Injection is a design pattern where dependencies are provided to the class rather than creating its own.
+So anything can be used as dependency who has @injectable decorator. Services, Gaurds, Interceptors, resolvers.
+Enables loose coupling, reusability.
+
+
+What is AOT compilation vs JIT? before angular 9 its JIT
+-> AOT - complies at build time component into javascript bundle files and runs it on Browser
+   JIT - complies at run time, converts into bundlefiles and downloads it on browser with compiler.
 
 Angular CLI purpose and key commands (ng generate, ng serve)
 

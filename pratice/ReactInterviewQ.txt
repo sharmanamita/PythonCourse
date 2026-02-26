@@ -1,0 +1,116 @@
+Implement useDebounce custom hook
+
+useEffect cleanup + dependency array
+
+useLocalStorage hook (syncs with localStorage)
+
+usePrevious hook (access previous prop/state)
+
+useFetch hook (loading/error states)
+
+Components & State
+Todo app with add/delete/persist localStorage
+
+Multi-step form with validation + progress
+
+Controlled accordion (one open at a time)
+
+Autocomplete dropdown with API search
+
+Infinite scroll list (IntersectionObserver)
+
+Performance
+Memoized list with React.memo + useMemo
+
+Virtualized 10k+ item list (react-window)
+
+useTransition + pending state
+
+Forms
+Form with react-hook-form + validation
+
+Dynamic form fields (add/remove inputs)
+
+File upload with progress bar
+
+Async & API
+Parallel API calls (Promise.all)
+
+Optimistic UI updates
+
+Error boundary + fallback UI
+
+Advanced Patterns
+Context + useReducer (global state)
+
+Custom hook for reusable table pagination
+
+HOC for loading spinner
+
+Render props for data fetching
+
+Compound components (Modal, Dropdown)
+############################################END
+
+Core Concepts
+What is React? Virtual DOM explanation
+
+Difference between React Elements vs React Components
+
+Props vs State - when to use each
+
+What happens during reconciliation?
+
+Controlled vs Uncontrolled components
+
+Hooks
+Rules of Hooks (why no conditionals/loops?)
+
+useState vs useReducer - when to use each
+
+useEffect dependency array purpose
+
+useCallback vs useMemo differences
+
+Custom Hooks naming convention + rules
+
+Performance
+React.memo vs PureComponent
+
+useMemo vs useCallback use cases
+
+Concurrent features (useTransition, useDeferredValue)
+
+Code splitting (React.lazy, Suspense)
+
+Component Patterns
+Higher-Order Components (HOC) vs Render Props
+
+Compound Components pattern
+
+Context API vs Redux - when to use each
+
+Error Boundaries purpose + implementation
+
+State Management
+Flux pattern explanation
+
+Redux Toolkit vs Zustand vs Context+useReducer
+
+immer library purpose in state updates
+
+Advanced
+Fiber architecture overview
+
+Server Components (React 18+)
+
+Automatic Batching explanation
+
+useId hook purpose
+
+React vs Angular
+React vs Angular architecture differences
+
+JSX vs Angular templates
+
+Hooks vs Lifecycle hooks
