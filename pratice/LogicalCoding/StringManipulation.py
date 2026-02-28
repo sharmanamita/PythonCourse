@@ -27,6 +27,14 @@ def count_vowels(s):
     return count
 
 
+def check_anagram(s1, s2):
+
+    if len(s1) != len(s2):
+        return False
+
+    return sorted(s1) == sorted(s2)
+
+
 print(reverse_String("Hello World"))
 print("largest:", find_largest([14, 42, 53, 41, 45]))
 print("smallest:", find_smallest([14, 42, 53, 41, 45]))
@@ -34,3 +42,4 @@ print("2nd largest:", find_2nd_largest([14, 42, 53, 41, 45]))
 print(palindrome("madam"))
 print(palindrome("hello"))
 print(count_vowels("Namita Sharma"))
+print("Is s1, s2 = listens, silent are anagram: ", check_anagram("listen", "silent"))

@@ -75,9 +75,21 @@ function isPalindrome(str) {
   }
 }
 
+function checkAnagram(s1, s2) {
+  if (s1.length !== s2.length) return false;
+  s1 = [...s1];
+  s2 = [...s2];
+
+  return (
+    s1.sort((a, b) => a.localeCompare(b)).join("") ==
+    s2.sort((a, b) => a.localeCompare(b)).join("")
+  );
+}
+
 reverseString("Hello World");
 findLargest([14, 42, 53, 41, 45]);
 findSmallest([14, 42, 53, 41, 45]);
 find2ndLargest([14, 42, 53, 41, 45]);
 countVowels("Hello World");
 isPalindrome("madam");
+console.log(checkAnagram("listen", "silent"));

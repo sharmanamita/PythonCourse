@@ -69,7 +69,8 @@ if-elif-else - complex structure, handle complex conditions, it can be used wher
 -> matchcase - does not have break it directly breaks when condition is met. for default it uses case _
    swicthcase - needs break statement, for default it uses default parameter
 
-What is a module? How to import?
+12. What is a module? How to import?
+->  
 
 What is the purpose of __init__.py?
 
@@ -117,14 +118,7 @@ n = 5  # Output: 120
 # 8. Prime number check
 num = 17  # Output: True
 
-# 9. Dictionary from two lists
-keys = ['a', 'b', 'c']
-vals = [1, 2, 3]  # Output: {'a':1, 'b':2, 'c':3}
-
-# 10. Flatten nested list
-nested = [[1,2], [3,4]]  # Output: [1,2,3,4]
-
-#11. String Manipulation
+#9. String Manipulation
 Anagram Check: Given two strings, check if they're anagrams (same chars, different order).
 
 python
@@ -134,6 +128,13 @@ Longest Common Substring: Find longest substring common to two strings.
 python
 s1, s2 = "ABCDGH", "ACDGHR"  # "CDGH"
 String to Integer (no int()): Convert "123" → 123 manually.
+
+# 10. Dictionary from two lists
+keys = ['a', 'b', 'c']
+vals = [1, 2, 3]  # Output: {'a':1, 'b':2, 'c':3}
+
+# 11. Flatten nested list
+nested = [[1,2], [3,4]]  # Output: [1,2,3,4]
 
 #12. Array/List Problems
 Rotate Array: Rotate [1,2,3,4,5] by 2 → [4,5,1,2,3]

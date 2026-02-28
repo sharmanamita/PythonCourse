@@ -103,25 +103,41 @@ So anything can be used as dependency who has @injectable decorator. Services, G
 Enables loose coupling, reusability.
 
 
-What is AOT compilation vs JIT? before angular 9 its JIT
+6. What is AOT compilation vs JIT? before angular 9 its JIT
 -> AOT - complies at build time component into javascript bundle files and runs it on Browser
    JIT - complies at run time, converts into bundlefiles and downloads it on browser with compiler.
 
 Angular CLI purpose and key commands (ng generate, ng serve)
 
 #2. Components & Lifecycle
-constructor() vs ngOnInit() - when to use each?
+7. constructor() vs ngOnInit() - when to use each?
+-> contructor is used to inject service into components. ngOnInit is used to initial the component and its variables.
 
-List all 8 lifecycle hooks in execution order
+8. List all 8 lifecycle hooks in execution order
+-> ngOnChanges() - Input property changes
+   ngOnInit() - Component/data initialization
+   ngDoCheck() - Custom change detection
+   ngAfterContentInit() - Content projection initialized
+   ngAfterContentChecked() - Content projection checked
+   ngAfterViewInit() - View and child views initialized
+   ngAfterViewChecked() - View and child views checked
+   ngOnDestroy() - Cleanup before component removal 
 
-What triggers ngOnChanges()?
 
-When does ngOnDestroy() execute?
+9. What triggers ngOnChanges()?
+-> ngOnChanges() triggers when Angular detects changes to @Input() properties bound via template property 
+binding (e.g., [inputName]="parentValue"). It receives a SimpleChanges object tracking previous and 
+current values
 
-@Input() vs @Output() decorator usage
+10. When does ngOnDestroy() execute?
+-> ngOnDestroy() executes once just before Angular destroys the component or directive. It's the final cleanup hook in the lifecycle sequence.
+
+11. @Input() vs @Output() decorator usage
+-> It implement parent-child relationship. @Input() passes data from parent to child components. @Output() emits events from child to parent via EventEmitter
 
 #3. Data Binding
-4 types of data binding in Angular (interpolation, property, event, two-way)
+12. 4 types of data binding in Angular 
+-> (interpolation, property, event, two-way)
 
 Property binding [] vs Interpolation {{}} performance
 
