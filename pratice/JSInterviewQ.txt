@@ -119,43 +119,241 @@ count2();
 Lexical this = Static binding (determined by where function is written)
 Regular this (Dynamic)
 
-What is the event loop? Microtasks vs Macrotasks
+6. what is call/apply/bind purpose?
+-> call(), apply(), and bind() control the this context in JavaScript functions.
+    These methods are essential for function borrowing, event handling, and argument passing
+    They solve issues like losing this context in callbacks or borrowing methods between objects.
 
-Difference between null vs undefined
+    call - Invoke a function immediately with individual arguments and a specific this.
+    apply - Invoke a function immediately with array of arguments and a specific this.
+    bind - Returns a new function with fixed this and optional pre-set arguments, without immediate execution.
 
-What is typeof? What values does it return?
+7. What is the event loop? Microtasks vs Macrotasks
+-> Event loop manages Javascript's single threaded execaution via call stack.
+Event loop contunuesly checks stack if empyt pulls it from queue.
+Two types of queue : task queue (high priority) and macro queue(low priority) 
+Promises (.then()), queueMicrotask(), MutationObserver - task queue
+SetTimeout, setInterval, DOM events, I/O - macro task queue
+EX - 
+console.log('1');  // Sync: 1
+setTimeout(() => console.log('2'), 0);  // Macrotask: 2
+Promise.resolve().then(() => console.log('3'));  // Microtask: 3
+console.log('4'); 
+OUTPUT - 1, 4, 3, 2
 
-Explain prototypal inheritance vs classical inheritance
+8. Difference between null vs undefined
+-> null - value itself to that varaible is not there like response didnt get from api so rsp obj is null
+undefined - property itself is not declared such as user = {}; clg(user.name);
 
-What is a constructor function?
+9. What is typeof? What values does it return?
+-> | Type      | typeof Result | Examples                              |
+| --------- | ------------- | ------------------------------------- |
+| String    | "string"      | 'hello', "text" programiz​            |
+| Number    | "number"      | 42, 3.14, NaN, Infinity               |
+| BigInt    | "bigint"      | 123n                                  |
+| Boolean   | "boolean"     | true, false                           |
+| Undefined | "undefined"   | Uninitialized variables               |
+| Symbol    | "symbol"      | Symbol('id')                          |
+| Object    | "object"      | {a: 1}, [1,2], new Date()             |
+| null      | "object"      | (Historical bug) w3schools​           |
+| Function  | "function"    | () => {}, Math.max developer.mozilla​ |
+
+10. Explain prototypal inheritance vs classical inheritance
+-> 
+
+11. What is a constructor function?
+->  Classical inheritance uses class hierarchies; 
+    Prototypal inheritance uses object delegation via prototypes.
+
+    // Method 1: using Object.create()
+    var animalProto = { eats: true; sleep(){console.log("Animal is sleeping");}};
+    var catProto = Object.create(animalProto);
+    catProto.hunt = () => console.log("Cat is in hunting mode");
+
+    console.log(catProto.eats); ---> true
+    console.log(catProto.hunt); ---> "Cat is in hunting mode" 
+    
+    // Method 2: Object.setPrototypeOf()
+    const cat = {hunts: true};
+
+    Object.setPrototypeOf(cat, animalProto);
+    console.log(cat.hunts, cat.eats);
 
 #2. ES6+ Feature
-Arrow functions vs regular functions (this binding)
+12. Arrow functions vs regular functions (this binding)
+-> Arrows are perfect for callbacks but never use them as constructors, object methods, or
+   when you need dynamic this or arguments. They have lexical this—fixed at definition time.
 
-Destructuring assignment (array vs object)
+   Lexical this means arrow functions inherit this from their surrounding (enclosing) scope where defined, 
+   not from how they're called
 
-Spread operator vs Rest parameters
+    | Aspect          | Regular Function    | Arrow Function                          |
+    | --------------- | ------------------- | --------------------------------------- |
+    | this Source     | Dynamic (call site) | Lexical (enclosing scope) freecodecamp ​ |
+    | call/apply/bind | Can override this   | Ignores—uses lexical this               |
+    | Object Methods  | this = object       | this = outer scope                      |
+    | Callbacks       | Needs .bind(this)   | Works automatically                     |
 
-let temporal dead zone (TDZ)
+13. Destructuring assignment (array vs object)
+->  Destructuring means extracts array/objects into varaibles with concise syntax.
+Array   - extracts elements using indexing. 
+Objects - extracts elements using object keys. 
 
-Template literals advantages
+const scores = [95, 87, 92, 88]; const[first, second, ...rest] = scores; // 95, 87, rest=[92, 88]
+const user = {
+  name: 'Nami Shar',
+  role: 'Developer',
+  skills: ['Angular', 'React']
+};
+// Basic
+const { name, role } = user;
+console.log(name, role);  // Nami Shar, Developer
 
-Default parameters vs function overloading
+// Rename properties
+const { name: fullName, role: jobTitle } = user;
 
-Object.entries(), Object.keys(), Object.values()
+// Default values
+const { city = 'Mumbai', country = 'India' } = user;
 
-Promise vs async/await vs callbacks
+// Rest properties
+const { skills, ...profile } = user;  // profile excludes skills
+ 
+14. Spread operator vs Rest parameters
+->  Spread operator expands iterables into individual elements; 
+    Rest parameters collect remaining arguments into an array. 
+    Both use ... syntax but opposite purposes—spread "unpacks," rest "packs."
+
+    // Array copy + merge // Spread
+    const a = [1, 2]; const b = [...a, 3, 4];  // [1,2,3,4]
+    // Object merge
+    const obj1 = {a: 1}; const obj2 = {...obj1, b: 2};  // {a:1, b:2}
+
+    // Variable args // rest
+    function sum(...numbers) {
+        return numbers.reduce((a, b) => a + b, 0);
+    }
+    sum(1, 2, 3, 4);  // 10
+
+    // Destructuring rest
+    const [first, ...rest] = [1, 2, 3, 4];  // first=1, rest=[2,3,4]
+    const {name, ...profile} = {name: 'Nami', age: 30};  // profile={age:30}
+
+
+15. let temporal dead zone (TDZ)
+->  let/const are hoisted but not initialized—accessing them before declaration triggers TDZ ReferenceError.
+    var initializes as undefined, hiding bugs.
+
+16. Template literals advantages
+->  Template literals reduce concatenation bugs and improve readability—standard in modern JS.
+
+17. Default parameters vs function overloading
+->  Function overloading does not exist in JS. We have default parameters instead of it, which can be made optional.
+
+18. Object.entries(), Object.keys(), Object.values()
+->  | Method              | Returns                       | Use Case                 |
+    | ------------------- | ----------------------------- | ------------------------ |
+    | Object.keys(obj)    | ["name", "age"]               | Loop over property names |
+    | Object.values(obj)  | ["Nami", 30]                  | Loop over values only    |
+    | Object.entries(obj) | [["name","Nami"], ["age",30]] | Key-value pairs          |
+
+19. Promise vs async/await vs callbacks
+->  
+#Promise: is a javascript object which represents the completion or failure of async operations.
+Its acts like a placeholder to a value which may not be ready yet. It has two main elements state and result.
+state has different status like pending, fullfilled or failed. 
+It resolves the issue of callback hell with multiple chaining of .then .catch()
+
+Promise.all([promise1, promise2])        // All must succeed
+Promise.allSettled([promise1, promise2]) // All must complete  
+Promise.race([promise1, promise2])       // First to settle
+Promise.any([promise1, promise2])        // First success
+
+function httpGetPromise(url) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {  // DONE
+        if (xhr.status === 200) {
+          resolve(JSON.parse(xhr.responseText));
+        } else {
+          reject(new Error(`HTTP ${xhr.status}: ${xhr.statusText}`));
+        }
+      }
+    };
+    
+    xhr.onerror = function() {
+      reject(new Error('Network error'));
+    };
+    
+    xhr.open('GET', url);
+    xhr.send();
+  });
+}
+
+// REAL API CALL
+httpGetPromise('https://jsonplaceholder.typicode.com/posts?userId=1')
+  .then(posts => {
+    console.log(`✅ Got ${posts.length} posts`);
+    console.table(posts.slice(0, 3));  // First 3 posts
+  })
+  .catch(error => {
+    console.error('❌ Error:', error.message);
+  });
+
+#Aysnc/await: lets you write aysnc promise-based code which look and read like a synchronous JS.
+// Promise chains (harder to read)
+fetch(url)
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+
+// async/await (cleaner)
+async function getData() {
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+| Pattern     | When to use                                  | Execution style           |
+| ----------- | -------------------------------------------- | ------------------------- |
+| async/await | Sequential operations, readable control flow | One-by-one (await pauses) |
+| Promise.all | Multiple independent parallel operations     | All at once (concurrent)  |
+
 
 #3. Async JavaScript
-What is Promise chaining? `.then().catch()
+20. What is Promise chaining? `.then().catch() 
+->  callback hell means nested promises call
 
-Explain Promise.all() vs Promise.race()
+21. Explain Promise.all() vs Promise.race()
+->  | Method       | When it settles | Returns                  |
+    | ------------ | --------------- | ------------------------ |
+    | all()        | All succeed     | [results]                |
+    | allSettled() | All done        | [{status, value/reason}] |
+    | race()       | First done      | firstResult              |
+    | any()        | First success   | firstSuccess             |
 
-Difference between async/await and Promises
+22. Difference between async/await and Promises
+->  check Q.19
 
-What happens if you await a non-promise?
+23. What happens if you await a non-promise?
+->  Still it acts as a synchronousoperation
+async function orderTest() {
+  await console.log('A');  // Prints immediately
+  console.log('B');
+}
 
-How does fetch() handle errors?
+orderTest();
+console.log('C');
+// Output: A, C, B  ← 'B' waits for microtask!
+
+
+24. How does fetch() handle errors?
+-> using catch method and always check for response.ok 
 
 #4. DOM & Browser
 querySelector() vs getElementById()

@@ -70,27 +70,110 @@ if-elif-else - complex structure, handle complex conditions, it can be used wher
    swicthcase - needs break statement, for default it uses default parameter
 
 12. What is a module? How to import?
-->  
+->  Python modules are files containing reusable code (functions, classes, variables); import statements bring them into scope.
 
-What is the purpose of __init__.py?
+13. What is the purpose of __init__.py?
+->
+| Aspect    | Module                        | Package                            |
+| --------- | ----------------------------- | ---------------------------------- |
+| Structure | Single math.py file           | Directory with __init__.py         |
+| Contains  | Functions, classes, variables | Multiple .py modules + subpackages |
+| Import    | import math                   | import numpy (uses __init__.py)    |
+| Hierarchy | Flat                          | Nested (subpackages)               |
+| Purpose   | Simple reusable code          | Organized libraries                |
 
-Difference between append() and extend().
+14. Difference between append() and extend().
+-> append() adds elements as one, extend() expand the elements adds it one by one like flattening.
+my_list = [1, 2, 3]
 
-What are list comprehensions? Give syntax.
+# append() - adds entire list as ONE element
+my_list.append([4, 5])
+print(my_list)  # [1, 2, 3, [4, 5]]
 
-Explain *args and **kwargs.
+# extend() - adds EACH element separately
+my_list.extend([4, 5])
+print(my_list)  # [1, 2, 3, 4, 5]
 
-What is exception handling? try-except-finally.
+# Strings work too!
+my_list = ['hello']
+my_list.append('world')      # ['hello', 'world']
+my_list.extend('world')      # ['hello', 'w', 'o', 'r', 'l', 'd']
 
-What does len() do? Works on what types?
+15. What are list comprehensions? Give syntax.
+->  List comprehensions create lists concisely using [expression for item in iterable (if condition)] syntax.
+
+16. Explain *args and **kwargs.
+-> *args collects extra positional arguments into a tuple; 
+   **kwargs collects extra keyword arguments into a dictionary.
+
+17. What is exception handling? try-except-finally.
+-> "Exception handling in Python uses try-except-finally blocks to catch and handle runtime errors.
+
+try: Contains risky code
+except: Handles specific errors  
+else: Runs only if no exception occurs
+finally: Always executes (cleanup)
+
+try:
+    # Risky code that might fail
+    risky_operation()
+except ValueError:
+    # Handle specific error
+    print("Invalid value!")
+except Exception as e:
+    # Catch-all for other errors
+    print(f"Error: {e}")
+else:
+    # Only runs if NO exception
+    print("Success!")
+finally:
+    # ALWAYS executes (cleanup)
+    print("Cleanup complete")
+
+
+Key principle: Fail gracefully, never use bare except."
+
+19. What does len() do? Works on what types?
+->  len() is a built-in function that returns an integer representing the number of items in sequences or collections.
+
+Syntax: len(object)
+
+Works on: strings, lists, tuples, dicts, sets
+Doesn't work on: integers, custom objects (unless __len__ implemented)
+
+| Type   | Example      | len() Result        |
+| ------ | ------------ | ------------------- |
+| String | len("hello") | 5                   |
+| List   | len([1,2,3]) | 3                   |
+| Tuple  | len((1,2))   | 2                   |
+| Dict   | len({'a':1}) | 1 (key-value pairs) |
+| Set    | len({1,2})   | 2                   |
+
 
 Difference between range() and xrange() (Python 2).
 
-What is PEP 8? Why follow it?
+20. What is PEP 8? Why follow it?
+-> PEP 8 = Python Enhancement Proposal 8 - coding conventions document.
 
-Explain None, True, False.
+**Key Rules:**
+- 4 spaces indentation (no tabs)
+- Max 79 chars per line
+- snake_case for functions/variables
+- CamelCase for classes  
+- Single quotes preferred
+- Blank lines: 2 between functions, 1 between methods
 
-What is slicing? Syntax: list[start:end:step].
+**Why follow?** Team consistency, readability, easier maintenance.
+
+
+21. Explain None, True, False.
+-> None = single value of NoneType (like null/undefined)
+True/False = bool type values (subclass of int: True=1, False=0)
+
+All are singletons - only ONE object exists for each globally.
+
+22. What is slicing? Syntax: list[start:end:step].
+->  Slicing extracts portions of sequences using [start:end:step] syntax.
 
 Coding Questions
 python
@@ -137,11 +220,11 @@ vals = [1, 2, 3]  # Output: {'a':1, 'b':2, 'c':3}
 nested = [[1,2], [3,4]]  # Output: [1,2,3,4]
 
 #12. Array/List Problems
-Rotate Array: Rotate [1,2,3,4,5] by 2 → [4,5,1,2,3]
+    Rotate Array: Rotate [1,2,3,4,5] by 2 → [4,5,1,2,3]
 
-Missing Number: Find missing number in [1,2,4,5] (should be 3).
+    Missing Number: Find missing number in [1,2,4,5] (should be 3).
 
-Two Sum (you know this!): Indices of nums that sum to target.
+    Two Sum (you know this!): Indices of nums that sum to target.
 
 #13. Max Consecutive Ones: [1,1,0,1,1,1] → 3
 

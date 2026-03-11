@@ -26,3 +26,23 @@ def flatten_list(lst):
 
 nested = [1, [2, 3], [4, [5, 6]], 7]
 flatten_list(nested)
+
+
+def roatate_array(arr, k):
+    n = len(arr)
+    reverse(arr, 0, n - 1)
+    print(arr)
+    reverse(arr, 0, k - 1)
+    print(arr)
+    reverse(arr, k, n - 1)
+    print(arr)
+
+
+def reverse(nums, start, end):
+    while start < end:
+        nums[start], nums[end] = nums[end], nums[start]
+        start += 1
+        end -= 1
+
+
+roatate_array([1, 2, 3, 4, 5], 2)

@@ -146,25 +146,47 @@ Two-way binding syntax and use cases
 Banana in a box syntax [(ngModel)]
 
 #4. Directives
-Structural (*ngIf, *ngFor) vs Attribute directives
+13. Structural (*ngIf, *ngFor) vs Attribute directives
+-> 
 
-Component directives vs regular directives
+14. Component directives vs regular directives
+->  component directive have views with templates. eg- list-app, 
+    regular directive enhances exisitng DOM elements without templates. eg- ngif, ngclass, ngstyle
 
 How to create custom attribute directive?
 
-@HostListener() vs @HostBinding()
+15. @HostListener() vs @HostBinding()
+->  HostListener are used to bind the events/function like click, mouse activities
+    HostBinding are used for binding classes, styles and attribute of lements like style.bgcolor
+
 
 #5. Pipes
-Pure vs impure pipes - performance impact
+16. Pure vs impure pipes - performance impact
+->  
+| Type                 | When Executes                            | Performance Cost                        |
+| -------------------- | ---------------------------------------- | --------------------------------------- |
+| Pure (default)       | Input primitive/object reference changes | ✅ Fast - skips unchanged data           |
+| Impure (pure: false) | Every change detection cycle             | ❌ Slow - mouse moves, timers trigger it |
 
-Async pipe advantages over | json
+17. Async pipe advantages over | json
+-> Async pipe automatically subscribes to Observables and unsubscribes; 
+   | json only formats objects as strings without subscription.
 
-Stateful vs stateless pipes
+18. Stateful vs stateless pipes 
+-> similar to pure and impure pipes
 
 #6. Dependency Injection
 Hierarchical dependency injection (component → service → root)
 
-providedIn: 'root' vs providers: []
+19. providedIn: 'root' vs providers: []
+->  eg - UserService can be for 'root' but authservice can be only for 'AuthComponent'
+| Aspect          | providedIn: 'root' ✅          | providers: []                  |
+| --------------- | ----------------------------- | ------------------------------ |
+| Declaration     | In @Injectable() decorator    | In @NgModule() or @Component() |
+| Singleton Scope | App-wide (root injector)      | Scoped to module/component     |
+| Tree-shaking    | ✅ Removes unused services     | ❌ Always bundled               |
+| Code Location   | Service file (self-contained) | Module files (scattered)       |
+| Usage           | 90% of services               | Lazy modules, testing          |
 
 @Optional() vs @SkipSelf() injectors
 

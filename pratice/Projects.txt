@@ -1,0 +1,43 @@
+Role: 
+Analysing Business Requirement, Story pointing the stories, 
+Technical Analysis, UI Development, deploying builds to dev, QA and 
+supporting production delivery.
+
+// Brillio - client Sage - Rewriting from angularjs to angular19
+
+Purpose: Sage Intacct was financial domain application was used for tracking stocks, bonds,
+         and other investments for enterprise users with compliance reporting. 
+         I was part of their multi-entity dashboard.
+         where it had filters on navbars to select investment companies based on date bond and investment category.
+Role: 
+1. Analyze the buisness requirement
+2. Creating base structure for components, models, services folder.
+3. then identifying the core modules or components.
+4. seeing which components can be re-usable
+5. creating responsive layout for it.
+
+Tech Stack - angular, .net and postgresql.
+Challenges - customizating charts(highchart), as it was in angularJs had different setting to charts.
+Solution - going through their documentation, finding right properties or attributes to implement exisitng feature
+
+// Cognizant - LPL financial - Creating new features
+
+Purpose: LPL Financial’s ClientWorks application is their advisor-facing platform. 
+         Its main purpose is to give financial advisors and institutions a single, 
+         integrated system to manage their entire business. 
+         I was part of their ART app advertising review tool where it gives ability to advisors to post their advertisement
+         and then it would get reviewed by backend team of lpl to verify and proceed it further.
+Tech Stack - angular, .net core and sql. AWS s3 bucket for their file storage.
+Challenges - while working on angularjs it was difficult to create date range picker becoz devextreme lib was supported.
+Solution -  I created it from scratch by synchronizing 2 date pickers.
+
+// Calibit - CalibitApp - product
+
+Purpose: Calibit application is IoT based platform providing digital solution 
+         to manufacturing domain clients. It helps clients to manage, monitor and calculate
+         productivity of their runtime machines through enhance data visualization using JS graphs. 
+Tech Stack - angular 8, java springboot, postgresql.
+Challenges - implementing different types of charts lib and making it reusable.
+
+
+

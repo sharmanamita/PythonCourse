@@ -38,7 +38,6 @@ function find2ndLargest(list) {
       max2 = list[i];
     }
   }
-
   console.log("2nd Largest is ", max2);
 }
 
