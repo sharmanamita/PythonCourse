@@ -10,7 +10,7 @@ env.bak/
 **/venv*/
 **/env*/
 **/.venv/
-GenAI_IBM_COURSE/module2-RAG/rag-venv
+GenAI_IBM_COURSE/module2-RAG/rag-env
 
 # Related files
 pip-log.txt

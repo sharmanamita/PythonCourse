@@ -157,7 +157,7 @@ How to create custom attribute directive?
 
 15. @HostListener() vs @HostBinding()
 ->  HostListener are used to bind the events/function like click, mouse activities
-    HostBinding are used for binding classes, styles and attribute of lements like style.bgcolor
+    HostBinding are used for binding classes, styles and attribute of elements like style.bgcolor
 
 
 #5. Pipes
@@ -228,3 +228,12 @@ Signals (Angular 16+) vs Observables
 Control flow @if, @for, @switch (Angular 17+)
 
 Zone-less change detection (Angular 18+)
+
+#Miscllenious
+
+1. What is Ngrx?
+-> Ngrx is libraray is angular which used for state management, that follows redux pattern.
+“NgRx is a state management library for Angular, 
+based on the Redux pattern, that centralizes application state in a single store 
+and uses actions and pure reducers to update that state in a predictable, unidirectional data flow.”
+

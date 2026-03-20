@@ -60,11 +60,11 @@ function RotateArray(arr, k) {
   }
 
   reverse(arr, 0, n - 1);
-  console.log("reverse", arr);
+  console.log("reverse", arr); //[5, 4, 3, 2, 1]
   reverse(arr, 0, k - 1);
-  console.log("after reverse", arr);
+  console.log("shifting indexes", arr); // [4, 5, 3, 2, 1]
   reverse(arr, k, n - 1);
-  console.log("final", arr);
+  console.log("aligining other indexes", arr); // [4, 5, 1, 2, 3]
 }
 
 RotateArray([1, 2, 3, 4, 5], 2);
